@@ -46,9 +46,9 @@ def main():
     countdown=canvas.create_image(960-133,0,image=three,anchor="ne")
     canvas.itemconfig(countdown, state='hidden')
 
-    frame_1,frame_2,frame_3=ImageTk.PhotoImage(file="./animations/walking/Left movement-1.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-2.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-3.png.png")
-    frame_4,frame_5,frame_6=ImageTk.PhotoImage(file="./animations/walking/Left movement-4.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-5.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-6.png.png")
-    frame_7=ImageTk.PhotoImage(file="./animations/walking/Left movement-7.png.png")
+    frame_1,frame_2,frame_3=ImageTk.PhotoImage(file="./animations/walking/Left movement-1.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-2.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-3.png")
+    frame_4,frame_5,frame_6=ImageTk.PhotoImage(file="./animations/walking/Left movement-4.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-5.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-6.png")
+    frame_7=ImageTk.PhotoImage(file="./animations/walking/Left movement-7.png")
     
     i=0
     x = 720/2
