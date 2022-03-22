@@ -45,20 +45,35 @@ def main():
     #Countdown creation
     countdown=canvas.create_image(960-133,0,image=three,anchor="ne")
     canvas.itemconfig(countdown, state='hidden')
+
+    frame_1,frame_2,frame_3=ImageTk.PhotoImage(file="./animations/walking/Left movement-1.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-2.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-3.png.png")
+    frame_4,frame_5,frame_6=ImageTk.PhotoImage(file="./animations/walking/Left movement-4.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-5.png.png"),ImageTk.PhotoImage(file="./animations/walking/Left movement-6.png.png")
+    frame_7=ImageTk.PhotoImage(file="./animations/walking/Left movement-7.png.png")
     
     i=0
     x = 720/2
     y = 960/2
     color = "red"
-    canvas.create_oval(x, y, x + 40, y + 40, fill=color)
+    frame=0
+    frames = [frame_1,frame_2,frame_3,frame_4,frame_5,frame_6,frame_7]
+    asa=canvas.create_image(x,y,image = frames[0])
     oval=bkgrd
-    rand=rdm.randint(440,540)
-    rand2=rdm.randint(200,260)
+    #Random Tick Count Generator
+    rand=rdm.randint(880,1080)
+    rand2=rdm.randint(400,520)
     rando=rand
     rando2=rand2
     playing = True
     while playing == True:
+        if i%30 == 0:
+            if frame < 6:
+                frame=frame+1
+            else:
+                frame = 0
+            img = frames[frame]
+            canvas.itemconfig(asa, image = img)
         if i%rando == 0:
+            #Random Tick Re-generator
             rand=rdm.randint(880,1080)
             rand2=rdm.randint(400,520)
             rando=rand
@@ -67,8 +82,10 @@ def main():
         canvas.update()
         if keyboard.is_pressed('d') and not keyboard.is_pressed('s') and not RedLightOn==True:
             if i%12 == 0:
+                #Movement
                 moveleft(canvas,oval)
         elif keyboard.is_pressed('d') and RedLightOn==True:
+            #Character Death Manager
             print("dead")
             canvas.create_image(0,0,image=deadlmao,anchor="nw")
             playing = False
@@ -82,6 +99,7 @@ def main():
             RedLightOn=False
             i=i+1
             if i >= rando2-90 and not i ==rando2:
+                #Countdown Logic
                 canvas.itemconfig(countdown, state='normal')
                 canvas.itemconfig(countdown, image = three)
                 if i >= rando2-60 and not i >= rando2-30:
