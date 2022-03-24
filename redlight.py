@@ -5,6 +5,7 @@ import keyboard
 from dependancies.movementfileimg import *
 from PIL import ImageTk,Image
 import threading
+import relightAI
 #from dependancies.screenshotter.screenshotter import *
 
 def main():
