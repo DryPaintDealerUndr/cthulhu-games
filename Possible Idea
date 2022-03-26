@@ -1,2 +1,1 @@
-Launcher written in C++ to check if python and the game's needed dependancies are installed and then run the game, 
-but if they aren't installed it will install them for the user.
+Launcher written in C# to check dependancies
