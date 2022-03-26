@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -40,6 +40,7 @@ namespace hello_world
             {
                 Console.WriteLine("No python installed!");
                 Console.ReadLine();
+                System.Environment.Exit(0);
             }
             try
             {
@@ -68,6 +69,7 @@ namespace hello_world
             {
                 Console.WriteLine("Please install the Python dependancies in requirements.txt");
                 Console.ReadLine();
+                System.Environment.Exit(0);
             }
         }
         }
